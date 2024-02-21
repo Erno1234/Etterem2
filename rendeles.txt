@@ -1,0 +1,21 @@
+Piros asztal rendelései:
+Item 5
+Item 5
+
+
+Zöld asztal rendelései:
+Item 4
+Item 4
+Item 4
+
+
+Kék asztal rendelései:
+Item 3
+Item 3
+Item 3
+
+
+Fehér asztal rendelései:
+Item 1
+Item 1
+
