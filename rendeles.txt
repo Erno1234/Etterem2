@@ -1,21 +1,28 @@
-Piros asztal rendelései:
-Item 5
-Item 5
+Piros
+Babgulyás
+Babgulyás
+Babgulyás
+Rántott sajt
 
 
-Zöld asztal rendelései:
-Item 4
-Item 4
-Item 4
+Zöld
+Gyümölcsleves
+Gyümölcsleves
+Bécsi szelet
 
 
-Kék asztal rendelései:
-Item 3
-Item 3
-Item 3
+Kék
+Somlói galuska
+Somlói galuska
+Somlói galuska
+Babgulyás
 
 
-Fehér asztal rendelései:
-Item 1
-Item 1
+Fehér
+Rántott sajt
+Rántott sajt
+Gyümölcsleves
+Bécsi szelet
+Bécsi szelet
+Gyümölcsleves
 

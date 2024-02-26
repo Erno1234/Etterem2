@@ -40,10 +40,10 @@ public class EtlapSzerk extends javax.swing.JFrame {
         Étlap = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        etelekList = new javax.swing.JList<>();
         Hozzaad = new javax.swing.JButton();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        etelArak = new javax.swing.JList<>();
         jPanel5 = new javax.swing.JPanel();
         PirosAsztalBtn = new javax.swing.JRadioButton();
         ZoldAsztalBtn = new javax.swing.JRadioButton();
@@ -104,12 +104,12 @@ public class EtlapSzerk extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Ételek"));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        etelekList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Babgulyás", "Rántott sajt", "Gyümölcsleves", "Bécsi szelet", "Somlói galuska" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane5.setViewportView(jList1);
+        jScrollPane5.setViewportView(etelekList);
 
         Hozzaad.setText("Hozzáad");
         Hozzaad.addActionListener(new java.awt.event.ActionListener() {
@@ -118,18 +118,19 @@ public class EtlapSzerk extends javax.swing.JFrame {
             }
         });
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        etelArak.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "700", "900", "1200", "500", "1500" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane14.setViewportView(jList2);
+        jScrollPane14.setViewportView(etelArak);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Hozzaad)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -476,7 +477,6 @@ public class EtlapSzerk extends javax.swing.JFrame {
         PirosASzamla.setRows(5);
         PirosASzamla.setBorder(javax.swing.BorderFactory.createTitledBorder("Piros asztal"));
         jScrollPane7.setViewportView(PirosASzamla);
-        PirosASzamla.getAccessibleContext().setAccessibleName("Piros asztal");
 
         KekASzamla.setColumns(20);
         KekASzamla.setRows(5);
@@ -625,7 +625,7 @@ public class EtlapSzerk extends javax.swing.JFrame {
     }//GEN-LAST:event_KekAsztalBtnActionPerformed
 
     private void MegrendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MegrendelesActionPerformed
-        List<String> kivalasztott = jList1.getSelectedValuesList();
+        List<String> kivalasztott = etelekList.getSelectedValuesList();
         if (!kivalasztott.isEmpty()) {
             StringBuilder etelek = new StringBuilder();
             for (String etel : kivalasztott) {
@@ -638,7 +638,7 @@ public class EtlapSzerk extends javax.swing.JFrame {
     }//GEN-LAST:event_MegrendelesActionPerformed
 
     private void HozzaadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HozzaadActionPerformed
-        List<String> kivalasztott = jList1.getSelectedValuesList();
+        List<String> kivalasztott = etelekList.getSelectedValuesList();
         if (!kivalasztott.isEmpty()) {
             StringBuilder etelek = new StringBuilder();
             for (String etel : kivalasztott) {
@@ -658,14 +658,14 @@ public class EtlapSzerk extends javax.swing.JFrame {
     }//GEN-LAST:event_FajlbaIrBtnActionPerformed
 
     private void SzamlaPirosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SzamlaPirosBtnActionPerformed
-       String etel = "Babgulyás";
-int ar = 700;
-String etel2 = "Rántott sajt";
-int ar2 = 900;
-String etel3 = "Összesen";
-int ar3 = 1600;
+        String etel = "Babgulyás";
+        int ar = 700;
+        String etel2 = "Rántott sajt";
+        int ar2 = 900;
+        String etel3 = "Összesen";
+        int ar3 = 1600;
 
-String pSzamla = String.format("Piros asztal\n\n%-15s%10d Ft\n%-17s%10d Ft\n\n%-15s%10d %s", etel + ":", ar, etel2 + ":", ar2, etel3 + ":", ar3, "Ft");
+        String pSzamla = String.format("Piros asztal\n\n%-15s%10d Ft\n%-17s%10d Ft\n\n%-15s%10d %s", etel + ":", ar, etel2 + ":", ar2, etel3 + ":", ar3, "Ft");
 
         PirosASzamla.setText(pSzamla);
     }//GEN-LAST:event_SzamlaPirosBtnActionPerformed
@@ -763,6 +763,8 @@ String pSzamla = String.format("Piros asztal\n\n%-15s%10d Ft\n%-17s%10d Ft\n\n%-
     private javax.swing.JTextArea ZoldASzamla;
     private javax.swing.JRadioButton ZoldAsztalBtn;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JList<String> etelArak;
+    private javax.swing.JList<String> etelekList;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -777,13 +779,8 @@ String pSzamla = String.format("Piros asztal\n\n%-15s%10d Ft\n%-17s%10d Ft\n\n%-
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -793,9 +790,6 @@ String pSzamla = String.format("Piros asztal\n\n%-15s%10d Ft\n%-17s%10d Ft\n\n%-
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -806,9 +800,6 @@ String pSzamla = String.format("Piros asztal\n\n%-15s%10d Ft\n%-17s%10d Ft\n\n%-
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel Étlap;
